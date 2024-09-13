@@ -40,7 +40,6 @@ requirements:
   host:
     - r-base
     - r-cli
-    - r-cpp11
     - r-glue
     - r-rlang
     - r-tibble
@@ -48,7 +47,6 @@ requirements:
   run:
     - r-base
     - r-cli
-    - r-cpp11
     - r-glue
     - r-rlang
     - r-tibble
