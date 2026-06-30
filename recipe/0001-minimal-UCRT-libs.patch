@@ -1,0 +1,29 @@
+From b8279cdbc02785a9f3a833cbc8c84d133df3d9af Mon Sep 17 00:00:00 2001
+From: Daniel Nachun <daniel.nachun@gmail.com>
+Date: Mon, 29 Jun 2026 17:24:39 -0700
+Subject: [PATCH] minimal UCRT libs
+
+---
+ src/Makevars.ucrt | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
+
+diff --git a/src/Makevars.ucrt b/src/Makevars.ucrt
+index 6a29611..02d5971 100644
+--- a/src/Makevars.ucrt
++++ b/src/Makevars.ucrt
+@@ -1,11 +1,6 @@
+ PKG_CPPFLAGS= -I. -Icpp11/include
+ 
+-ifeq (,$(shell pkg-config --version 2>/dev/null))
+-    PKG_LIBS = -larchive -lxml2 -lcrypto -lnettle -lregex -lexpat -llzo2 \
+-               -llzma -llz4 -lbz2 -lz -lzstd -liconv -lws2_32 -lbcrypt
+-else
+-    PKG_LIBS = $(shell pkg-config --libs libarchive)
+-endif
++PKG_LIBS = -larchive
+ 
+ LIB_CON = ../inst/lib$(R_ARCH)/libconnection.dll
+ 
+-- 
+2.53.0
+
