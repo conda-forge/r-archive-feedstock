@@ -1,14 +1,14 @@
-From b8279cdbc02785a9f3a833cbc8c84d133df3d9af Mon Sep 17 00:00:00 2001
+From e5f337106d09ee5597fc1e9fab281c9e5f9feee7 Mon Sep 17 00:00:00 2001
 From: Daniel Nachun <daniel.nachun@gmail.com>
 Date: Mon, 29 Jun 2026 17:24:39 -0700
 Subject: [PATCH] minimal UCRT libs
 
 ---
- src/Makevars.ucrt | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+ src/Makevars.ucrt | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
 
 diff --git a/src/Makevars.ucrt b/src/Makevars.ucrt
-index 6a29611..02d5971 100644
+index 6a29611..b702fee 100644
 --- a/src/Makevars.ucrt
 +++ b/src/Makevars.ucrt
 @@ -1,11 +1,6 @@
@@ -24,6 +24,15 @@ index 6a29611..02d5971 100644
  
  LIB_CON = ../inst/lib$(R_ARCH)/libconnection.dll
  
+@@ -13,7 +8,7 @@ all: $(OBJECTS) $(SHLIB) $(LIB_CON)
+ 
+ $(LIB_CON): connection/connection.o
+ 	mkdir -p $(dir $(LIB_CON))
+-	$(SHLIB_LINK) $(LIBR) -o $@ $^
++	$(SHLIB_LINK) -o $@ $^ $(LIBR)
+ 
+ clean:
+ 	rm -f $(OBJECTS) $(SHLIB) $(LIB_CON) connection/connection.o
 -- 
 2.53.0
 
