@@ -10,10 +10,12 @@ source:
     - {{ cran_mirror }}/src/contrib/archive_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/archive/archive_{{ version }}.tar.gz
   sha256: 544362367a9ec182572b1b3d99d70a4be17c37924328b217e787d625f2462a45
+  patches:
+    - 0001-minimal-UCRT-libs.patch
 
 build:
-  skip: true  # [not linux]
-  number: 0
+  skip: True  # [win]
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -50,7 +52,6 @@ requirements:
     - r-glue
     - r-rlang
     - r-tibble
-    - libarchive
 
 test:
   commands:
