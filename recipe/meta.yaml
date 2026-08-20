@@ -1,4 +1,4 @@
-{% set version = "1.1.13" %}
+{% set version = "1.1.14" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/archive_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/archive/archive_{{ version }}.tar.gz
-  sha256: 544362367a9ec182572b1b3d99d70a4be17c37924328b217e787d625f2462a45
+  sha256: 1f1f83a2e4157e4197908c9b69e7139df3aafa2f1e3f7a3d79938d082fe2e792
   patches:
     - 0001-minimal-UCRT-libs.patch
     - 0002-rename-shared-library-to-avoid-dll-clash.patch  # [win]
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
